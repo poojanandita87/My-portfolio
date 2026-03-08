@@ -110,7 +110,20 @@ margin-bottom:10px;
   from { width: 0; }
   to   { width: 55%; }
 }
+/* Projects */
+.project-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
 
+.project-link:hover {
+    background-color: #0056b3;
+}
 
 /* Contact form */
 
