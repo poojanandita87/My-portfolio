@@ -1,33 +1,107 @@
+/* Page Background */
+
 body{
-font-family:Arial;
+font-family: Arial, sans-serif;
 margin:0;
-background:#E6E6FA;
+padding:0;
+background-color:#E6E6FA;
+color:black;
 text-align:center;
 }
 
+
+/* Navigation Bar */
+
 nav{
-background:#333;
-padding:10px;
+background:#d8c8ff;
+padding:15px;
+box-shadow:0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav a{
-color:white;
 margin:15px;
 text-decoration:none;
+color:black;
+font-weight:bold;
 font-size:18px;
 }
 
+nav a:hover{
+color:#6a5acd;
+}
+
+
+/* Sections */
+
 section{
-background:rgb(74, 45, 72);
-margin:20px;
-padding:20px;
-border-radius:10px;
+background:white;
+margin:30px auto;
+padding:25px;
+width:80%;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Headings */
+
+h1{
+font-size:40px;
+margin-top:20px;
+}
+
+h2{
+color:#6a5acd;
+margin-bottom:10px;
+}
+
+
+/* Skills list */
+
+ul{
+list-style:none;
+padding:0;
+}
+
+ul li{
+background:#f3f0ff;
+margin:8px;
+padding:10px;
+border-radius:6px;
+display:inline-block;
+}
+
+
+/* Contact form */
+
+input, textarea{
+width:80%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
 button{
-padding:10px 20px;
-background:#007BFF;
+background:#6a5acd;
 color:white;
+padding:10px 20px;
 border:none;
-border-radius:5px;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#5a4abf;
+}
+
+
+/* Footer */
+
+footer{
+background:#d8c8ff;
+padding:15px;
+margin-top:30px;
+font-size:14px;
 }
