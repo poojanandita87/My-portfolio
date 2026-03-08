@@ -58,73 +58,54 @@ margin-bottom:10px;
 
 /* Skills list */
 
-.bar {
-  width: 100%;
-  height: 10px;
-  background: #ddd;
-  border-radius: 20px;
-  overflow: hidden;
+.bar{
+width:100%;
+height:10px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
 }
 
-.progress {
-  height: 10px;
-  width: 0;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  border-radius: 20px;
+.progress{
+height:10px;
+width:0;
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+border-radius:20px;
+animation:fillBar 2s forwards;
 }
 
-/* Each skill gets its own animation */
-.html {
-  animation: fillHTML 2s 0.2s forwards;
+.html{
+animation-delay:0.2s;
 }
 
-.css {
-  animation: fillCSS 2s 0.4s forwards;
+.css{
+animation-delay:0.4s;
 }
 
-.js {
-  animation: fillJS 2s 0.6s forwards;
+.js{
+animation-delay:0.6s;
 }
 
-.nodejs {
-  animation: fillNode 2s 0.8s forwards;
+@keyframes fillBar{
+from{
+width:0;
 }
 
-/* Different final widths for each skill */
-@keyframes fillHTML {
-  from { width: 0; }
-  to   { width: 90%; }
+to{
+width:90%;
+}
+}
+.html{
+width:90%;
 }
 
-@keyframes fillCSS {
-  from { width: 0; }
-  to   { width: 80%; }
+.css{
+width:85%;
 }
 
-@keyframes fillJS {
-  from { width: 0; }
-  to   { width: 70%; }
+.js{
+width:75%;
 }
-
-@keyframes fillNode {
-  from { width: 0; }
-  to   { width: 55%; }
-}
-/* Projects */
-.project-link {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-.project-link:hover {
-    background-color: #0056b3;
-}
-
 /* Contact form */
 
 input, textarea{
