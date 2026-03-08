@@ -58,53 +58,81 @@ margin-bottom:10px;
 
 /* Skills list */
 
-.bar{
-width:100%;
-height:10px;
-background:#ddd;
-border-radius:20px;
-overflow:hidden;
+#skills {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-.progress{
-height:10px;
-width:0;
-background:linear-gradient(90deg,#00c6ff,#0072ff);
-border-radius:20px;
-animation:fillBar 2s forwards;
+#skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #333;
 }
 
-.html{
-animation-delay:0.2s;
+.skill {
+  margin-bottom: 30px;
 }
 
-.css{
-animation-delay:0.4s;
+.skill h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #555;
 }
 
-.js{
-animation-delay:0.6s;
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 25px;
+  position: relative;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@keyframes fillBar{
-from{
-width:0;
+.skill-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: fillSkill 2s forwards;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-size: 200% 100%;
+  animation: fillSkill 2s forwards, gradientMove 3s linear infinite;
 }
 
-to{
-width:90%;
-}
-}
-.html{
-width:90%;
+/* Different gradient colors for each skill */
+.skill-fill.html { background: linear-gradient(135deg, #f16529, #ff9f40); }
+.skill-fill.css { background: linear-gradient(135deg, #2965f1, #6fa8dc); }
+.skill-fill.js { background: linear-gradient(135deg, #f7df1e, #ffea61); color: #000; }
+.skill-fill.node { background: linear-gradient(135deg, #68a063, #99c794); }
+
+/* Fill animation */
+@keyframes fillSkill {
+  from { width: 0; }
+  to { width: var(--width); }
 }
 
-.css{
-width:85%;
+/* Moving gradient effect */
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
 }
 
-.js{
-width:75%;
+/* Hover effect */
+.skill-bar:hover .skill-fill {
+  transform: scaleX(1.05);
+  filter: brightness(1.1);
+  transition: all 0.3s ease;
 }
 /* Contact form */
 
