@@ -55,7 +55,14 @@ color:#6a5acd;
 margin-bottom:10px;
 }
 
-
+/* about me */
+.quote{
+  font-style: italic;
+  text-align: center;
+  margin-top: 15px;
+  color: #00bcd4;
+  font-size: 18px;
+}
 /* Skills list */
 
 #skills {
