@@ -55,13 +55,20 @@ color:#6a5acd;
 margin-bottom:10px;
 }
 
-.profile-pic{
-width:200px;
-height:200px;
+.profile-image{
+width:150px;
+height:150px;
 border-radius:50%;
+overflow:hidden;
+margin:auto;
+border:4px solid white;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.profile-image img{
+width:100%;
+height:100%;
 object-fit:cover;
-border:4px solid #00bcd4;
-margin-top:20px;
 }
 
 /* about me */
