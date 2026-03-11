@@ -55,6 +55,15 @@ color:#6a5acd;
 margin-bottom:10px;
 }
 
+.profile-pic{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #00bcd4;
+margin-top:20px;
+}
+
 /* about me */
 .quote{
   font-style: italic;
