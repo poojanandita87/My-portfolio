@@ -1,5 +1,8 @@
 /* Page Background */
 
+h1{
+  text-align: center;
+}
 body {
     margin: 0;
     padding: 0;
