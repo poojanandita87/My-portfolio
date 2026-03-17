@@ -1,12 +1,12 @@
 /* Page Background */
 
-body{
-font-family: Arial, sans-serif;
-margin:0;
-padding:0;
-background-color:#E6E6FA;
-color:black;
-text-align:center;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #E6E6FA, #D8BFD8, #C8A2C8);
+    color: #333;
 }
 
 
