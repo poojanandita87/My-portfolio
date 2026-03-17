@@ -1,9 +1,12 @@
 /* Page Background */
 
-h1{
-  text-align: center;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 body {
+  text-align: center;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -65,6 +68,10 @@ margin-bottom:10px;
     height:200px;
     border-radius:50%;
     object-fit:cover;
+}
+img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* about me */
