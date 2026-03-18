@@ -147,13 +147,11 @@ My goal is to grow as a skilled developer. I am always curious to learn, create,
 
 <form>
 <form id="contact-form">
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button>Send</button>
+<form action="submit_message.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
 
 </form>
 
