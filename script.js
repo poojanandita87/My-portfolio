@@ -1,17 +1,30 @@
-document.querySelector("form").addEventListener("submit", async (e) => {
+document.getElementById("contactForm")
+.addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const name = document.querySelector("#name").value;
-  const email = document.querySelector("#email").value;
-  const message = document.querySelector("#message").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
 
-  const res = await fetch("https://my-portfolio-1-0318.onrender.com/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ name, email, message })
-  });
+  try {
+    const res = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    });
 
-  alert("Message sent!");
+    const data = await res.json();
+
+    if (data.success) {
+      alert("✅ Message sent!");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("❌ Error");
+    }
+
+  } catch (err) {
+    alert("❌ Server not working");
+  }
 });
