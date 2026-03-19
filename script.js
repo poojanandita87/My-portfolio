@@ -6,8 +6,12 @@ document.getElementById("contactForm")
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
+  const btn = document.querySelector("button");
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
   try {
-    const res = await fetch("http://localhost:3000/contact", {
+    const res = await fetch("https://your-backend.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -18,13 +22,16 @@ document.getElementById("contactForm")
     const data = await res.json();
 
     if (data.success) {
-      alert("✅ Message sent!");
+      alert("✅ Message sent successfully!");
       document.getElementById("contactForm").reset();
     } else {
-      alert("❌ Error");
+      alert("❌ " + data.error);
     }
 
   } catch (err) {
-    alert("❌ Server not working");
+    alert("❌ Server error");
+  } finally {
+    btn.innerText = "Send";
+    btn.disabled = false;
   }
 });
