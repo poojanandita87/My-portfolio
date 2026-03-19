@@ -1,35 +1,78 @@
-
-
+require("dotenv").config();
 const express = require("express");
-const mysql = require("mysql2");
+const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
+// Middleware
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
+app.use(express.static("public"));
 
-// MySQL connection
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Nandita19@!",
-  database: "portfolio"
-});
-
-// API to receive form data
-app.post("/contact", (req, res) => {
-  const { name, email, message } = req.body;
-
-  const sql = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
-  db.query(sql, [name, email, message], (err, result) => {
-    if (err) {
-      res.send("Error");
-    } else {
-      res.send("Message saved");
-    }
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log("✅ MongoDB connected!"))
+  .catch(err => {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
   });
+
+// Contact Schema
+const contactSchema = new mongoose.Schema({
+  name:    { type: String, required: true },
+  email:   { type: String, required: true },
+  message: { type: String, required: true },
+  date:    { type: Date, default: Date.now }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const Contact = mongoose.model("Contact", contactSchema);
+
+// Contact Route
+app.post("/contact", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+
+    // Validate fields
+    if (!name || !email || !message) {
+      return res.status(400).json({ 
+        success: false, 
+        error: "All fields are required!" 
+      });
+    }
+
+    // Save to MongoDB
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
+
+    console.log("New message from:", name, email);
+
+    res.json({ 
+      success: true, 
+      message: "Message saved successfully!" 
+    });
+
+  } catch (err) {
+    console.error("Error saving contact:", err);
+    res.status(500).json({ 
+      success: false, 
+      error: "Server error. Please try again!" 
+    });
+  }
 });
+
+// Home Route
+app.get("/", (req, res) => {
+  res.send("✅ Portfolio server is working!");
+});
+
+// Start Server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
+
