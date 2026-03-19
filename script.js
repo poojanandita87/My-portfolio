@@ -17,6 +17,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     alert("✅ " + data);
   })
   .catch(err => {
-    alert("❌ Error sending message");
+    alert("❌ Error");
   });
 });
