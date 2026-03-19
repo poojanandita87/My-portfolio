@@ -21,10 +21,11 @@ app.get("/", (req, res) => {
 });
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: process.env.DB_PASSWORD,
-    database: "portfolio"
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    port: process.env.MYSQLPORT || 3306
 });
 
 db.connect(err => {

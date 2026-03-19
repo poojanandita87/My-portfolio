@@ -5,7 +5,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
-  fetch("http://localhost:3000/contact", {
+  fetch ( "https://my-portfolio-y5p2.onrender.com/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
