@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://poojanandita400:Pooja1234@cluster0.xuzo5uq.mongodb.net/portfolioDB?appName=Cluster0")
   .then(() => console.log("✅ MongoDB connected!"))
   .catch(err => {
     console.error("❌ MongoDB connection error:", err);
