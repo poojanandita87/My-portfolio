@@ -11,7 +11,7 @@ document.getElementById("contactForm")
   btn.disabled = true;
 
   try {
-    const res = await fetch("https://your-backend.onrender.com/contact", {
+    const res = await fetch("https://my-portfolio-2-46me.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
