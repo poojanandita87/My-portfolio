@@ -5,7 +5,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   const email = document.querySelector("#email").value;
   const message = document.querySelector("#message").value;
 
-  const res = await fetch("http://localhost:5000/contact", {
+  const res = await fetch("https://my-portfolio-1-0318.onrender.com/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
