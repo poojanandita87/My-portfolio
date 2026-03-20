@@ -167,17 +167,17 @@ My goal is to grow as a skilled developer. I am always curious to learn, create,
 <p>© 2026 Pooja Nandita</p>
 
 </footer>
-<p id="status">Checking backend connection...</p>
+
 <script>
 fetch("https://my-portfolio-2-46me.onrender.com/")
   .then(res => res.json())
   .then(data => {
-    console.log(data);
+    document.getElementById("status").innerText = "Backend Connected ✅";
+  })
+  .catch(err => {
+    document.getElementById("status").innerText = "Connection Failed ❌";
   });
 </script>
-<h3>Data from Backend:</h3>
-<p id="data"></p>
-<h3>Backend Status:</h3>
 <p id="status">Checking connection...</p>
 <script src="script.js"></script>
 </body>
