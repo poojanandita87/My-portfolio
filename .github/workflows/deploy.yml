@@ -1,37 +1,17 @@
-name: Deploy Portfolio Website
+name: Deploy Portfolio
 
 on:
   push:
-    branches:
-      - main   # runs when you push code
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Get your code
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js (if using JS)
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      # Step 3: Install dependencies (if any)
-      - name: Install dependencies
-        run: npm install
-        continue-on-error: true
-
-      # Step 4: Build project (optional)
-      - name: Build project
-        run: npm run build
-        continue-on-error: true
-
-      # Step 5: Deploy to GitHub Pages
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
