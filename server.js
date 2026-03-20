@@ -67,7 +67,7 @@ app.post("/contact", async (req, res) => {
 
 // Home Route
 app.get("/", (req, res) => {
-  res.send("✅ Portfolio server is working!");
+  res.json("✅ Portfolio server is working!");
 });
 
 // Start Server
