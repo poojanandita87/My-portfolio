@@ -1,0 +1,169 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(135deg, #E6E6FA, #D8BFD8, #C8A2C8);
+    color: #333;
+    text-align: center;
+}
+
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    width: 100%;
+    background: #d8c8ff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+nav a {
+    margin: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #6a5acd;
+}
+
+
+/* ===== SECTIONS ===== */
+section {
+    background: white;
+    margin: 30px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+/* ===== HEADINGS ===== */
+h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #6a5acd;
+    margin-bottom: 10px;
+}
+
+
+/* ===== PROFILE IMAGE ===== */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ===== ABOUT QUOTE ===== */
+.quote {
+    font-style: italic;
+    margin-top: 15px;
+    color: #00bcd4;
+    font-size: 18px;
+}
+
+
+/* ===== SKILLS SECTION ===== */
+#skills {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+#skills h2 {
+    color: #1a56db;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.skill {
+    margin-bottom: 1.2rem;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.bar-track {
+    background: #e2e8f0;
+    border-radius: 999px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #38bdf8, #1a56db);
+}
+
+
+/* ===== EDUCATION ===== */
+#education {
+    background-color: #f6fbfd;
+    padding: 50px;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
+
+/* ===== CONTACT FORM ===== */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #6a5acd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #5a4abf;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+    width: 100%;
+    background: #d8c8ff;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+}
