@@ -36,7 +36,7 @@ document.getElementById("contactForm")
   }
 });
 
-fetch("https://my-portfolio-2-46me.onrender.com/contact")
+fetch("https://my-portfolio-2-46me.onrender.com/")
   .then(res => res.json())
   .then(data => {
     document.getElementById("status").innerText = "Connected ✅";
