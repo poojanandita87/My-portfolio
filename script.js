@@ -35,3 +35,12 @@ document.getElementById("contactForm")
     btn.disabled = false;
   }
 });
+
+fetch("https://my-portfolio-2-46me.onrender.com/contact")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("status").innerText = "Backend Connected ✅";
+  })
+  .catch(error => {
+    document.getElementById("status").innerText = "Connection Failed ❌";
+  });
