@@ -37,10 +37,10 @@ document.getElementById("contactForm")
 });
 
 fetch("https://my-portfolio-2-46me.onrender.com/contact")
-    .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
-    document.getElementById("status").innerText = "Backend Connected ✅";
+    document.getElementById("status").innerText = data.message;
   })
-  .catch(error => {
-    document.getElementById("status").innerText = "Connection Failed ❌";
+  .catch(err => {
+    document.getElementById("status").innerText = "Error connecting ❌";
   });
