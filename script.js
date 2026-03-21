@@ -41,7 +41,5 @@ fetch("https://my-portfolio-2-46me.onrender.com/api/status")
   .then(data => {
     document.getElementById("status").innerText = "Connected ✅";
     document.getElementById("data").innerText = JSON.stringify(data);
-  })
-  .catch(err => {
-    document.getElementById("status").innerText = "Connection Failed ❌";
   });
+  
