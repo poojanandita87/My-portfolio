@@ -15,7 +15,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://poojanandita400:Pooja1234@cluster0.xuzo5uq.mongodb.net/portfolioDB?appName=Cluster0")
+require("dotenv").config();
+...
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("✅ MongoDB connected!"))
   .catch(err => {
     console.error("❌ MongoDB connection error:", err);
